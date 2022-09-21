@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  PokemonGuessingImageProps,
-  ResultState,
-} from '../types';
+import {PokemonGuessingImageProps, ResultState} from '../types';
 import styled from 'styled-components';
 
 interface Props {
@@ -18,6 +15,8 @@ const PokemonImage = styled.img<Props>`
 export const PokemonGuessingImage = (props: PokemonGuessingImageProps) => {
   return (
     <PokemonImage
+      id={props.id}
+      data-testid={props.id}
       isGuessing={props.state === ResultState.GUESSING}
       src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props?.pokemon?.id}.png`}
     />

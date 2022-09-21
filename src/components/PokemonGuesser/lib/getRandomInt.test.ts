@@ -1,8 +1,9 @@
 import {getRandomInt} from './getRandomInt';
 
-describe('sample test', () => {
-  it('generates random int', () => {
+describe('getRandomInt test', () => {
+  it('generated value between 0 and max', () => {
     const rand = getRandomInt(300);
-    expect(rand).toBeLessThanOrEqual(300);
+    expect(rand).toBeLessThan(300);
+    expect(rand).toBeGreaterThanOrEqual(0);
   });
 });

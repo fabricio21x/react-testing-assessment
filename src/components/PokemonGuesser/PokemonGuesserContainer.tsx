@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import React from 'react';
-import { useGetRandomPokemon } from '../PokemonGuesser/hooks/useGetRandomPokemon';
-import { PokemonGuesserPresentational } from './PokemonGuesserPresentational';
-import { ResultState } from '../PokemonGuesser/types';
-import { PokemonContext } from '../../context/PokemonContext';
-import { useAllPokemons } from '../../hooks/useAllPokemons';
+import {useGetRandomPokemon} from '../PokemonGuesser/hooks/useGetRandomPokemon';
+import {PokemonGuesserPresentational} from './PokemonGuesserPresentational';
+import {ResultState} from '../PokemonGuesser/types';
+import {PokemonContext} from '../../context/PokemonContext';
+import {useAllPokemons} from '../../hooks/useAllPokemons';
 
 export const PokemonGuesserContainer = () => {
-  const { randomPokemon, changeRandomPokemon } = useGetRandomPokemon();
+  const {randomPokemon, changeRandomPokemon} = useGetRandomPokemon();
   const [stateGuess, setStateGuess] = useState<ResultState>(
-    ResultState.GUESSING
+    ResultState.GUESSING,
   );
 
-  const { dispatch } = React.useContext(PokemonContext);
+  const {dispatch} = React.useContext(PokemonContext);
 
   const getAllPokemons = useAllPokemons(dispatch);
 

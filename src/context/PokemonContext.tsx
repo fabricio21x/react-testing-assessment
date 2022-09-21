@@ -1,9 +1,9 @@
 import React from 'react';
-import { createContext, useEffect, useReducer } from 'react';
-import { getAllPokemons } from '../services/PokemonService';
+import {createContext, useReducer} from 'react';
+import {getAllPokemons} from '../services/PokemonService';
 import reducer from './reducer';
 
-import { Actions, ContextValue, State } from './types';
+import {Actions, ContextValue, State} from './types';
 
 const initialState: State = {
   isLoading: false,
@@ -15,7 +15,7 @@ export const PokemonContext = createContext<ContextValue>({
   dispatch: () => {},
 });
 
-export function PokemonProvider({ children }: { children: React.ReactNode }) {
+export function PokemonProvider({children}: {children: React.ReactNode}) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const value = {

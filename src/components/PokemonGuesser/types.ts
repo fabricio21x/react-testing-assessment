@@ -1,4 +1,4 @@
-import { Pokemon } from 'pokenode-ts';
+import {Pokemon} from 'pokenode-ts';
 
 export enum ResultState {
   ERROR = 'ERROR',
@@ -15,6 +15,7 @@ export type PresentationalProps = {
 };
 
 export type PokemonGuessingImageProps = {
+  id: string;
   state: ResultState;
   pokemon: Pick<Pokemon, 'id'> | null;
   isGuessing: boolean;

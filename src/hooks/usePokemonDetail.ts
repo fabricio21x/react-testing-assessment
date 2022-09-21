@@ -1,6 +1,6 @@
-import { Dispatch, useCallback } from 'react';
-import { Action, Actions } from '../context/types';
-import { getPokemonbyName } from '../services/PokemonService';
+import {Dispatch, useCallback} from 'react';
+import {Action, Actions} from '../context/types';
+import {getPokemonbyName} from '../services/PokemonService';
 
 export function usePokemonDetail(dispatch: Dispatch<Action>) {
   return useCallback(
@@ -17,6 +17,6 @@ export function usePokemonDetail(dispatch: Dispatch<Action>) {
         payload: pokemon,
       });
     },
-    [dispatch]
+    [dispatch],
   );
 }

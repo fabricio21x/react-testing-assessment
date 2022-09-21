@@ -1,20 +1,20 @@
-import { Pokemon } from 'pokenode-ts';
-import { useContext, useMemo, useState } from 'react';
-import { MAX_POKEMON_QUANTITY } from '../../../constants';
-import { PokemonContext } from '../../../context/PokemonContext';
-import { usePokemonDetail } from '../../../hooks/usePokemonDetail';
-import { getRandomInt } from '../../PokemonGuesser/lib/getRandomInt';
+import {Pokemon} from 'pokenode-ts';
+import {useContext, useMemo, useState} from 'react';
+import {MAX_POKEMON_QUANTITY} from '../../../constants';
+import {PokemonContext} from '../../../context/PokemonContext';
+import {usePokemonDetail} from '../../../hooks/usePokemonDetail';
+import {getRandomInt} from '../../PokemonGuesser/lib/getRandomInt';
 
 export function useGetRandomPokemon(): {
   randomPokemon: Pokemon | null;
   changeRandomPokemon: () => void;
 } {
   const [randomIdx, setRandomIdx] = useState(
-    getRandomInt(MAX_POKEMON_QUANTITY)
+    getRandomInt(MAX_POKEMON_QUANTITY),
   );
 
   const {
-    state: { pokemons, isLoading },
+    state: {pokemons, isLoading},
     dispatch,
   } = useContext(PokemonContext);
 
@@ -39,5 +39,5 @@ export function useGetRandomPokemon(): {
     setRandomIdx(getRandomInt(MAX_POKEMON_QUANTITY));
   };
 
-  return { randomPokemon, changeRandomPokemon };
+  return {randomPokemon, changeRandomPokemon};
 }

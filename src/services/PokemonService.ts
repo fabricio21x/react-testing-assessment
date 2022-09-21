@@ -1,4 +1,4 @@
-import { Pokemon } from 'pokenode-ts';
+import {Pokemon} from 'pokenode-ts';
 import PokemonApiProvider from '../provider/PokemonApiProvider';
 
 const pokemonProvider = PokemonApiProvider;

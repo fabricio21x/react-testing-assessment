@@ -1,7 +1,7 @@
 import React from 'react';
-import { PresentationalProps, ResultState } from '../PokemonGuesser/types';
-import { InfinitySpin } from 'react-loader-spinner';
-import { PokemonGuessingImage } from '../PokemonGuesser/components/PokemonGuessingImage';
+import {PresentationalProps, ResultState} from '../PokemonGuesser/types';
+import {InfinitySpin} from 'react-loader-spinner';
+import {PokemonGuessingImage} from '../PokemonGuesser/components/PokemonGuessingImage';
 
 export const PokemonGuesserPresentational = (props: PresentationalProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -18,7 +18,12 @@ export const PokemonGuesserPresentational = (props: PresentationalProps) => {
       ) : (
         <React.Fragment>
           <div>
-            <PokemonGuessingImage state={props.state} pokemon={props.pokemon}  isGuessing/>
+            <PokemonGuessingImage
+              id="guesser-img"
+              state={props.state}
+              pokemon={props.pokemon}
+              isGuessing
+            />
           </div>
           <div>
             {props.state === ResultState.ERROR && (
@@ -31,6 +36,7 @@ export const PokemonGuesserPresentational = (props: PresentationalProps) => {
               <form onSubmit={onSubmit}>
                 <input
                   ref={inputRef}
+                  data-testid="pokemon-input"
                   type="text"
                   placeholder="Who's that Pokemon?"
                   defaultValue=""
